@@ -1,9 +1,15 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link> |
+
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
+  <router-view />
+  <van-tabbar v-model="active">
+    <van-tabbar-item icon="home-o"> 主页 </van-tabbar-item>
+    <van-tabbar-item icon="search">标签</van-tabbar-item>
+    <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+    <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  </van-tabbar>
 </template>
 
 <style lang="scss">
