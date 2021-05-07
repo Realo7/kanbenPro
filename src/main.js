@@ -5,6 +5,7 @@ import router from './router';
 import store from './store';
 import 'vant/lib/index.css';
 import 'normalize.css';
+import axios from 'axios'
 
-createApp(App).use(store).use(router).use(Vant)
+createApp(App).use(store).use(router).use(Vant).use(axios)
   .mount('#app');

@@ -61,9 +61,7 @@ export default {
   name: 'Home',
   components: { MyTabbar },
   setup() {
-    onMounted(() => {
-      console.log('***'.repeat(3));
-    });
+    onMounted(() => {});
     return {};
   },
 };
