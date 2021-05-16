@@ -13,7 +13,7 @@
                  placeholder="请输入用户名" />
     </van-cell-group>
   </div>
-  <my-tabbar activeq="1"></my-tabbar>
+  <my-tabbar active="2"></my-tabbar>
 </template>
 <script>
 import MyTabbar from '@/components/myTabbar.vue';

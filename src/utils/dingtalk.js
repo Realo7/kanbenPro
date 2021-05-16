@@ -1,4 +1,6 @@
-import { authenticate } from '@/api/common'; // jsapi 鉴权时获取签名信息
+import {
+  authenticate,
+} from '@/api/common'; // jsapi 鉴权时获取签名信息
 import * as dd from 'dingtalk-jsapi/entry/union'; // 按需应用，微应用部分
 import requestAuthCode from 'dingtalk-jsapi/api/runtime/permission/requestAuthCode'; // 登陆用临时授权码
 import choose from 'dingtalk-jsapi/api/biz/contact/choose'; // PC 通讯录选人
@@ -40,8 +42,7 @@ export function contactChoose(url, userids) {
           corpId: process.env.VUE_APP_CORPID, // 企业id
           max: 10, // 人数限制，当multiple为true才生效，可选范围1-1500
         }).then((res) => {
-          let rew = res;
-          rew = JSON.parse(JSON.stringify(res).replace(/emplId/g, 'userid'));
+          const rew = JSON.parse(JSON.stringify(res).replace(/emplId/g, 'userid'));
           resolve(rew);
         });
       })

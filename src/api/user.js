@@ -1,26 +1,21 @@
 import axios from '@/utils/request';
 
 // 用户登录
+// 该接口在后端集成了获取用户信息，所以会直接返回用户信息
+// 在获得了accessToken和userId之后，可以直接调用第二个接口，获取到用户信息
 export function login(data) {
   return axios({
     url: '/login',
     method: 'post',
-    data,
+    params: data,
   });
 }
 
 // 获取用户信息
-export function getInfo() {
+export function getInfo(data) {
   return axios({
-    url: '/user/info',
-    method: 'get',
-  });
-}
-
-// 获取审核人, 用于申请绩效时审核
-export function listAuditors() {
-  return axios({
-    url: '/user/getAuditors',
-    method: 'get',
+    url: '/user/get',
+    method: 'post',
+    params: data,
   });
 }
